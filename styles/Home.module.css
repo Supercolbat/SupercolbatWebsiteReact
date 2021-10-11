@@ -91,3 +91,7 @@
     flex-direction: column;
   }
 }
+
+.highlight {
+  color: #056CF2;
+}
