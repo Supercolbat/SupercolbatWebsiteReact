@@ -1,6 +1,6 @@
 ### Hi there, I'm Joey Lent (Supercolbat)!
 
-I am a student developer. I have experience with writing Discord bots, web scraping and automation, mobile app development, and a few other things.
+I am a high school student developer. I have experience with writing Discord bots, web scraping and automation, mobile app development, and a few other things.
 
 I consider myself as a Pythonista, but I can also use the following languages or frameworks.
 
@@ -9,6 +9,7 @@ I consider myself as a Pythonista, but I can also use the following languages or
 - Flutter/Dart
 - L-l-lua...
 - Brainfork
+- Discord.py
 
 I'm also learning these languages and frameworks:
 
