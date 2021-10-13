@@ -93,5 +93,25 @@
 }
 
 .highlight {
-  color: #056CF2;
+  /*color: #056CF2;*/
+}
+
+.thebox {
+  z-index: -1;
+  min-width: 75px;
+  min-height: 75px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgb(209,30,228);
+  background: linear-gradient(-45deg, rgba(209,30,228,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+.title {
+  width: 50%;
+  background: rgb(209,30,228);
+  background: linear-gradient(-45deg, rgba(209,30,228,1) 0%, rgba(0,212,255,1) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
