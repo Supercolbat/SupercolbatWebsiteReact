@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+//import { GithubButton, ReplitButton } from '../components/SocialButtons.tsx'
 import GithubButton from '../components/GithubButton.tsx'
+import ReplitButton from '../components/ReplitButton.tsx'
 import RandomButton from '../components/RandomButton.tsx'
-import { motion } from "framer-motion"
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { motion, useViewportScroll, useTransform } from "framer-motion"
+import {
+  ChevronRightIcon, ChevronDownIcon
+} from '@chakra-ui/icons'
 import {
   Box,
   Flex, Spacer,
@@ -34,6 +38,11 @@ import {
 */
 
 export default function Home() {
+  /* Fade out on scroll
+  const { scrollYProgress } = useViewportScroll()
+  const opacityAnim = useTransform(scrollYProgress, [0, 1], [1, 0])
+  */
+
   return (
     <div className={styles.container}>
       <Head>
@@ -43,32 +52,49 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Flex className={styles.header}>
-          <Stack>
-            <Heading className={styles.title} as="h1" size="4xl">
-              Joey<br />Lent<span className={styles.highlight}>.</span>
-            </Heading>
-            <Text>Student Developer <ChevronRightIcon /> Self-taught <ChevronRightIcon /> Linux Enthusiast</Text>
-          </Stack>
-          
-          <Spacer />
-          <VStack h="80vh" justify="space-around">
-            <RandomButton />
-            <motion.button
-              whileHover={{ scale: 1.25 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <GithubButton />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.25 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Circle size="5rem" bg="tomato" color="white" />
-            </motion.button>
+        <div className={styles.headerWrapper}>
+          <Flex className={styles.header}>
+            <Stack>
+              <Heading className={styles.title} as="h1" size="4xl">
+                Joey<br />Lent.
+              </Heading>
+              <Text>Self-taught Student Developer</Text>
+            </Stack>
             
-          </VStack>
-        </Flex>
+            <Spacer />
+            <VStack h="50vh" justify="space-around">
+              <motion.button
+                className={styles.socialButton}
+                whileHover={{ scale: 1.25 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <GithubButton />
+              </motion.button>
+              <motion.button
+                className={styles.socialButton}
+                whileHover={{ scale: 1.25 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <ReplitButton />
+              </motion.button>
+              
+            </VStack>
+          </Flex>
+        
+        <motion.div
+          className={styles.scrollDown}
+          animate={{
+            y: [0, 20]
+          }}
+          transition={{
+            duration: 1,
+            repeatType: "reverse",
+            repeat: Infinity
+          }}
+        >
+          <ChevronDownIcon w="50px" h="50px" />
+        </motion.div>
+        </div>
 
         <Heading align="center">
           The website is under construction. Check out these repos while you wait!

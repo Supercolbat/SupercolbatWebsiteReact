@@ -27,11 +27,32 @@
   align-items: center;
 }
 
-.header {
+.headerWrapper {
   height: 100vh;
   width: 80vw;
   margin-bottom: 2rem;
+  
+  /* Stack elements on top of eachother */
+  display: grid;
+}
+
+.header {
+  height: 100%;
+  width: 100%;
   align-items: center;
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.scrollDown {
+  text-align: center;
+  
+  margin-top: auto;
+  margin-bottom: 50px;
+
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .footer a {
@@ -92,10 +113,6 @@
   }
 }
 
-.highlight {
-  /*color: #056CF2;*/
-}
-
 .thebox {
   z-index: -1;
   min-width: 75px;
@@ -109,9 +126,18 @@
 }
 
 .title {
-  width: 50%;
   background: rgb(209,30,228);
   background: linear-gradient(-45deg, rgba(209,30,228,1) 0%, rgba(0,212,255,1) 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  user-select: none;
+  cursor: pointer;
+}
+
+.socialButton {
+  user-select: none;
+}
+.socialButton:focus:not(:focus-visible) {
+  /* https://www.a11yproject.com/posts/2013-01-25-never-remove-css-outlines/ */
+  outline: none;
 }

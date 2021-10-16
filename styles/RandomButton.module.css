@@ -10,7 +10,7 @@
   padding: 0;
   cursor: pointer;
 
-  select: no-select;
+  user-select: none;
   
   transition: filter 600ms;
   -webkit-tap-highlight-color: transparent;
