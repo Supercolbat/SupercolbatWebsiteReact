@@ -10,10 +10,12 @@ I consider myself as a Pythonista, but I can also use the following languages or
 - L-l-lua...
 - Brainfork
 - Discord.py
+- /r(e)g\1x/i
 
 I'm also learning these languages and frameworks:
 
 - Rust :crab:
+- C
 - Next.JS
 - Discord.JS
 
