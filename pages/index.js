@@ -1,41 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-//import { GithubButton, ReplitButton } from '../components/SocialButtons.tsx'
+import styles from '../styles/Home.module.scss'
+
 import GithubButton from '../components/GithubButton.tsx'
 import ReplitButton from '../components/ReplitButton.tsx'
-import RandomButton from '../components/RandomButton.tsx'
-import { motion, useViewportScroll, useTransform } from "framer-motion"
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import {
-  ChevronRightIcon, ChevronDownIcon
-} from '@chakra-ui/icons'
-import {
-  Box,
+  Box, Center,
   Flex, Spacer,
   Stack, VStack, HStack,
   Heading, Text,
   Circle,
   Avatar
-} from "@chakra-ui/react";
-
-/*
-<div>
-  <motion.div className={styles.thebox}
-    animate={{
-      scale: [1, 2, 2, 1, 1],
-      rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-    }}
-    transition={{
-      duration: 2,
-      ease: "easeInOut",
-      times: [0, 0.2, 0.5, 0.8, 1],
-      loop: Infinity,
-      repeatDelay: 1
-    }}
-  />
-</div>
-*/
+} from "@chakra-ui/react"
 
 export default function Home() {
   /* Fade out on scroll
@@ -46,113 +23,87 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Supercolbat</title>
-        <meta name="description" content="My name is Joey Lent and I am a self-taught student developer." />
+        <title>Joey Lent</title>
+        <meta name="description" content="Hey! I'm Joey Lent and I'm a hobbyist developer." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.headerWrapper}>
-          <Flex className={styles.header}>
-            <Stack>
-              <Heading className={styles.title} as="h1" size="4xl">
-                Joey<br />Lent.
+        <Flex className={styles.header}>
+          <Stack>
+            <Heading className={styles.title} as="h1" size="4xl">
+              Hey,<br />
+              I'm <span className={styles.titleBold}>Joey<br />
+              <p className={styles.titleIndent}>Lent</p></span>
+            </Heading>
+            <Text className={styles.headerDescription}>Hobbyist developer / I use Fedora BTW</Text>
+          </Stack>
+          
+          <Spacer />
+          <VStack h="50vh" justify="space-around">
+            <motion.button
+              className={styles.socialButton}
+              whileHover={{ scale: 1.25 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <GithubButton />
+            </motion.button>
+            <motion.button
+              className={styles.socialButton}
+              whileHover={{ scale: 1.25 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ReplitButton />
+            </motion.button>
+          </VStack>
+        </Flex>
+
+        <div className={styles.headerDrop}>
+          <div className={styles.top}></div>
+          <Center className={styles.left}>
+            Hello! I am Joey Lent, and I enjoy creating random things. I’ve created programs in a wide variety of areas. These include web and mobile, Discord bots, web scraping and automation, and more. I primarily work with Python, but I also know how to use Flutter/Dart, React, Javascript, HTML, CSS, Lua, BF, and RegEx. In the future, I hope to learn C, Rust, and improve my skills with Flutter and React.
+          </Center>
+          <Stack>
+            <div className={styles.rightBottom}></div>
+            <div className={styles.rightTop}></div>
+            <div className={styles.skills}>
+              <Heading className={styles.title} as="h2" size="2xl" align="center">
+                Skills
               </Heading>
-              <Text>Self-taught Student Developer</Text>
-            </Stack>
-            
-            <Spacer />
-            <VStack h="50vh" justify="space-around">
-              <motion.button
-                className={styles.socialButton}
-                whileHover={{ scale: 1.25 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <GithubButton />
-              </motion.button>
-              <motion.button
-                className={styles.socialButton}
-                whileHover={{ scale: 1.25 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <ReplitButton />
-              </motion.button>
-              
-            </VStack>
-          </Flex>
-        
-        <motion.div
-          className={styles.scrollDown}
-          animate={{
-            y: [0, 20]
-          }}
-          transition={{
-            duration: 1,
-            repeatType: "reverse",
-            repeat: Infinity
-          }}
-        >
-          <ChevronDownIcon w="50px" h="50px" />
-        </motion.div>
+            </div>
+          </Stack>
         </div>
 
-        <Heading align="center">
-          The website is under construction. Check out these repos while you wait!
-        </Heading>
-        <Text align="center">
-          These repos are definitely still actively maintained.
-        </Text>
+        <div className={styles.bottomDrop}>
+          <Stack>
+            <Center className={styles.content}>
+              <Heading className={styles.title} as="h2" size="2xl" align="center">
+                Projects
+              </Heading>
+            </Center>
+            <div className={styles.leftTop}></div>
+            <div className={styles.leftBot}></div>
+            <div className={styles.bottom}></div>
+            <div className={styles.rightTop}></div>
+            <div className={styles.rightBot}></div>
+          </Stack>
+        </div>
 
-        <div className={styles.grid}>
-          <a
-            href="https://github.com/Supercolbat/dotfiles"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2>dotfiles &rarr;</h2>
-            <p>"time to show the whole world how messy i am" ~ me.</p>
-          </a>
-
-          <a
-            href="https://github.com/Supercolbat/Muck1337"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2>Muck1337 &rarr;</h2>
-            <p>Utility mod / Hack for Muck, a game made by DaniDev.</p>
-          </a>
-
-          <a
-            href="https://github.com/Supercolbat/RoBot"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2>RoBot &rarr;</h2>
-            <p>A framework for making chat-controlled Roblox bots.</p>
-          </a>
-
-          <a
-            href="https://github.com/Supercolbat/BFuscate"
-            className={styles.card}
-            target="_blank"
-          >
-            <h2>BFuscate &rarr;</h2>
-            <p>
-              A decent obfuscator for Python, in Python.
-            </p>
-          </a>
+        <div className={styles.projects}>
+          <div className={styles.grid}>
+          </div>
         </div>
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://vercel.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by ☕
+          Powered by Vercel, Nord Theme, and ☕
         </a>
       </footer>
     </div>
-  )
+  );
 }
