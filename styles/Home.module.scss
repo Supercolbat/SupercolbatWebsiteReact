@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import "colors.scss";
+
+
+// Mixins
+
+@mixin headerDropRight() {
+  margin: 0;
+  height: 40vh;
+  width: 35%;
+
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+@mixin bottomDrop($direction, $z-index: 0) {
+  height: $bottomDropHeight;
+  width: 35%;
+
+  position: absolute;
+  bottom: 2rem;
+  #{$direction}: 0;
+
+  z-index: $z-index;
+}
+
+// Variables
+$bottomDropHeight: 25%;
+
+
+/*
+ * Styles
+ */
+
+.container {
+  padding: 0;
+}
+
+.main {
+  padding: 0;
+}
+
+.header {
+  height: 100vh;
+  width: 100%;
+  background-color: $nord-darker;
+  padding: 0 3em;
+
+  align-items: center;
+
+  grid-column: 1;
+  grid-row: 1;
+  font-family: Rubik;
+
+  .title {
+    width: max-content;
+    color: $nord8;
+    font-weight: 100;
+    font-family: Rubik;
+
+    .titleBold {
+      font-weight: bold;
+    }
+
+    .titleIndent {
+      /* text-align: right; */
+      padding-left: 2.5ch;
+      /* text-decoration: underline dotted; */
+      /* text-decoration: underline wavy; */
+      text-decoration: underline;
+    }
+  }
+
+  .headerDescription {
+    font-family: Rubik;
+    padding-top: 2rem;
+    color: $nord9;
+    font-size: 1.5rem;
+  }
+}
+
+.socialButton {
+  user-select: no-select;
+}
+
+/* Second vh*/
+
+.headerDrop {
+  height: calc(2rem + 5vmin + 60vh);
+  width: 100%;
+  position: relative;
+  background-color: $nord0;
+
+  .top {
+    padding: 0;
+    height: 2rem;
+    width: 100%;
+
+    border-radius: 0 0 2rem 0;
+    background-color: $nord-darker;
+  }
+
+  .left {
+    padding: 1em;
+    height: 40vh;
+    width: 65%;
+
+    position: absolute;
+    top: 2rem;
+
+    font-family: Rubik;
+    border-radius: 0 0 2rem 2rem;
+    background-color: $nord-darker;
+
+    color: $nord4;
+  }
+
+  .rightBottom {
+    @include headerDropRight;
+    background-color: $nord-darker;
+  }
+
+  .rightTop {
+    @include headerDropRight;
+    background-color: $nord0;
+    border-radius: 2rem 0 0 0;
+  }
+
+  .skills {
+    padding: 3rem;
+    height: 120vh;
+    width: calc(35% - 10vmin);
+
+    position: absolute;
+    top: calc(2rem + 5vmin);
+    right: 5vmin;
+    z-index: 2;
+
+    background-color: $nord-light;
+    border-radius: 2rem;
+  }
+}
+
+.skills .title {
+  color: $nord9;
+}
+
+
+
+.bottomDrop {
+  height: calc(2rem + 5vmin + 60vh);
+  width: 100%;
+  position: relative;
+  background-color: $nord-medium;
+
+  .bottom {
+    padding: 0;
+    height: 2rem;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    background-color: $nord-darker;
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .content {
+    margin: 0;
+    padding: 3rem;
+    height: $bottomDropHeight;
+    width: 30%;
+
+    position: absolute;
+    bottom: 2rem;
+    right: 35%;
+
+    background-color: $nord-darker;
+    border-radius: 2rem 2rem 0 0;
+
+    .title {
+      color: $nord4;
+    }
+  }
+
+  .leftTop {
+    @include bottomDrop(left, 1);
+    background-color: $nord-medium;
+    border-radius: 0 0 2rem 0;
+  }
+
+  .leftBot {
+    @include bottomDrop(left);
+    background-color: $nord-darker;
+  }
+
+  .rightTop {
+    @include bottomDrop(right, 1);
+    background-color: $nord-medium;
+    border-radius: 0 0 0 2rem;
+  }
+
+  .rightBot {
+    @include bottomDrop(right);
+    background-color: $nord-darker;
+  }
+}
+
+/* Third vh */
+
+.projects {
+  background-color: $nord-darker;
+}
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  height: 5rem;
+  border-top: 3px solid $nord3;
+  color: $nord4;
+  background-color: $nord-darker;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
