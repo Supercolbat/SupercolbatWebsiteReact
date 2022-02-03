@@ -15,11 +15,6 @@ import {
 } from "@chakra-ui/react"
 
 export default function Home() {
-  /* Fade out on scroll
-  const { scrollYProgress } = useViewportScroll()
-  const opacityAnim = useTransform(scrollYProgress, [0, 1], [1, 0])
-  */
-
   return (
     <div className={styles.container}>
       <Head>
@@ -101,7 +96,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by Vercel, Nord Theme, and ☕
+          Powered by Vercel and ☕. Nord Theme
         </a>
       </footer>
     </div>
