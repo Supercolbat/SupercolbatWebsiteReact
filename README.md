@@ -5,7 +5,7 @@ I am a high school student who likes to develop. I have experience with writing 
 I consider myself as a Pythonista, but I can also use the following languages or frameworks.
 
 - Javascript
-- HTML and CSS
+- HTML (Pug) and CSS (Sass)
 - Flutter/Dart
 - L-l-lua...
 - Brainfork
