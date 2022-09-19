@@ -1,20 +1,23 @@
-### Hi there, I'm Joey (Supercolbat)!
+## Hi there, I'm Joey (a.k.a Supercolbat)!
 
-I am a high school student who likes to develop. I have experience with writing Discord bots, web scraping and automation, mobile app development, and a few other things.
+I am a high school student who likes to code stuff. I don't focus on anything specific.
 
-I consider myself as a Pythonista, but I can also use the following languages or frameworks.
+### What I do?
 
-- Javascript
-- HTML (Pug) and CSS (Sass)
-- Flutter/Dart
-- L-l-lua...
-- Brainfork
-- Discord.py
-- /r(e)g\1x/i
+:snake: Python
 
-I'm also (planning on) learning these languages and frameworks:
+:brain: Brainfork
 
-- Rust :crab:
-- uh idk
+:dart: Flutter/Dart
+
+👨‍💻 HTML (Pug), CSS (Sass)
+
+### What do I want to do?
+
+:crab: Rust
+
+:crown: Nim
+
+⚡ Zig
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=Supercolbat&show_icons=true&theme=radical)
